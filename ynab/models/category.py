@@ -42,7 +42,7 @@ class Category(object):
         'balance': 'int',
         'goal_type': 'str',
         'goal_creation_month': 'date',
-        'goal_target': 'str',
+        'goal_target': 'int',
         'goal_target_month': 'date',
         'goal_percentage_complete': 'int',
         'deleted': 'bool'
@@ -381,7 +381,7 @@ class Category(object):
         The goal target amount in milliunits  # noqa: E501
 
         :return: The goal_target of this Category.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._goal_target
 
@@ -392,7 +392,7 @@ class Category(object):
         The goal target amount in milliunits  # noqa: E501
 
         :param goal_target: The goal_target of this Category.  # noqa: E501
-        :type: str
+        :type: int
         """
         if goal_target is None:
             raise ValueError("Invalid value for `goal_target`, must not be `None`")  # noqa: E501

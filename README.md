@@ -1,6 +1,9 @@
-# swagger-client
+# YNAB-Python
 
-Updated to address null type definitions which may be causing an authentication error.
+### Edited version of the swagger boilerplate sdk to remedy nulls which cause an authorisation error
+
+See :
+- https://support.youneedabudget.com/t/y75vv1/swagger-error
 
 Our API uses a REST based design, leverages the JSON data format, and relies upon HTTPS for transport. We respond with meaningful HTTP response codes and if an error occurs, we include error details in the response body.  API Documentation is at https://api.youneedabudget.com
 
@@ -26,7 +29,7 @@ pip install git+https://github.com//PatrickHastings//ynab-python.git
 
 Then import the package:
 ```python
-import ynab
+import ynab 
 ```
 
 ### Setuptools
@@ -50,12 +53,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ynab
+from ynab.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-swagger_client.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+ynab.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 ynab
 # create an instance of the API class
