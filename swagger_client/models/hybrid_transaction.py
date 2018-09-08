@@ -34,23 +34,35 @@ class HybridTransaction(object):
     """
     swagger_types = {
         'type': 'str',
-        'account_name': 'str'
+        'parent_transaction_id': 'str',
+        'account_name': 'str',
+        'payee_name': 'str',
+        'category_name': 'str'
     }
 
     attribute_map = {
         'type': 'type',
-        'account_name': 'account_name'
+        'parent_transaction_id': 'parent_transaction_id',
+        'account_name': 'account_name',
+        'payee_name': 'payee_name',
+        'category_name': 'category_name'
     }
 
-    def __init__(self, type=None, account_name=None):  # noqa: E501
+    def __init__(self, type=None, parent_transaction_id=None, account_name=None, payee_name=None, category_name=None):  # noqa: E501
         """HybridTransaction - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
+        self._parent_transaction_id = None
         self._account_name = None
+        self._payee_name = None
+        self._category_name = None
         self.discriminator = None
 
         self.type = type
+        self.parent_transaction_id = parent_transaction_id
         self.account_name = account_name
+        self.payee_name = payee_name
+        self.category_name = category_name
 
     @property
     def type(self):
@@ -84,6 +96,31 @@ class HybridTransaction(object):
         self._type = type
 
     @property
+    def parent_transaction_id(self):
+        """Gets the parent_transaction_id of this HybridTransaction.  # noqa: E501
+
+        For subtransaction types, this is the id of the pararent transaction.  For transaction types, this id will be always be null.  # noqa: E501
+
+        :return: The parent_transaction_id of this HybridTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_transaction_id
+
+    @parent_transaction_id.setter
+    def parent_transaction_id(self, parent_transaction_id):
+        """Sets the parent_transaction_id of this HybridTransaction.
+
+        For subtransaction types, this is the id of the pararent transaction.  For transaction types, this id will be always be null.  # noqa: E501
+
+        :param parent_transaction_id: The parent_transaction_id of this HybridTransaction.  # noqa: E501
+        :type: str
+        """
+        if parent_transaction_id is None:
+            raise ValueError("Invalid value for `parent_transaction_id`, must not be `None`")  # noqa: E501
+
+        self._parent_transaction_id = parent_transaction_id
+
+    @property
     def account_name(self):
         """Gets the account_name of this HybridTransaction.  # noqa: E501
 
@@ -105,6 +142,52 @@ class HybridTransaction(object):
             raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
 
         self._account_name = account_name
+
+    @property
+    def payee_name(self):
+        """Gets the payee_name of this HybridTransaction.  # noqa: E501
+
+
+        :return: The payee_name of this HybridTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_name
+
+    @payee_name.setter
+    def payee_name(self, payee_name):
+        """Sets the payee_name of this HybridTransaction.
+
+
+        :param payee_name: The payee_name of this HybridTransaction.  # noqa: E501
+        :type: str
+        """
+        if payee_name is None:
+            raise ValueError("Invalid value for `payee_name`, must not be `None`")  # noqa: E501
+
+        self._payee_name = payee_name
+
+    @property
+    def category_name(self):
+        """Gets the category_name of this HybridTransaction.  # noqa: E501
+
+
+        :return: The category_name of this HybridTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_name
+
+    @category_name.setter
+    def category_name(self, category_name):
+        """Sets the category_name of this HybridTransaction.
+
+
+        :param category_name: The category_name of this HybridTransaction.  # noqa: E501
+        :type: str
+        """
+        if category_name is None:
+            raise ValueError("Invalid value for `category_name`, must not be `None`")  # noqa: E501
+
+        self._category_name = category_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,22 +35,30 @@ class ScheduledTransactionDetail(object):
     """
     swagger_types = {
         'account_name': 'str',
+        'payee_name': 'str',
+        'category_name': 'str',
         'subtransactions': 'list[ScheduledSubTransaction]'
     }
 
     attribute_map = {
         'account_name': 'account_name',
+        'payee_name': 'payee_name',
+        'category_name': 'category_name',
         'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, account_name=None, subtransactions=None):  # noqa: E501
+    def __init__(self, account_name=None, payee_name=None, category_name=None, subtransactions=None):  # noqa: E501
         """ScheduledTransactionDetail - a model defined in Swagger"""  # noqa: E501
 
         self._account_name = None
+        self._payee_name = None
+        self._category_name = None
         self._subtransactions = None
         self.discriminator = None
 
         self.account_name = account_name
+        self.payee_name = payee_name
+        self.category_name = category_name
         self.subtransactions = subtransactions
 
     @property
@@ -75,6 +83,52 @@ class ScheduledTransactionDetail(object):
             raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
 
         self._account_name = account_name
+
+    @property
+    def payee_name(self):
+        """Gets the payee_name of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The payee_name of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_name
+
+    @payee_name.setter
+    def payee_name(self, payee_name):
+        """Sets the payee_name of this ScheduledTransactionDetail.
+
+
+        :param payee_name: The payee_name of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if payee_name is None:
+            raise ValueError("Invalid value for `payee_name`, must not be `None`")  # noqa: E501
+
+        self._payee_name = payee_name
+
+    @property
+    def category_name(self):
+        """Gets the category_name of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The category_name of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_name
+
+    @category_name.setter
+    def category_name(self, category_name):
+        """Sets the category_name of this ScheduledTransactionDetail.
+
+
+        :param category_name: The category_name of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if category_name is None:
+            raise ValueError("Invalid value for `category_name`, must not be `None`")  # noqa: E501
+
+        self._category_name = category_name
 
     @property
     def subtransactions(self):
