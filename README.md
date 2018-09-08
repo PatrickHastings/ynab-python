@@ -26,7 +26,7 @@ pip install git+https://github.com//PatrickHastings//ynab-python.git
 
 Then import the package:
 ```python
-import swagger_client 
+import ynab
 ```
 
 ### Setuptools
@@ -40,7 +40,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import swagger_client
+import ynab
 ```
 
 ## Getting Started
@@ -57,7 +57,7 @@ from pprint import pprint
 # Configure API key authorization: bearer
 swagger_client.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['Authorization'] = 'Bearer'
+ynab
 # create an instance of the API class
 api_instance = swagger_client.AccountsApi()
 budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
